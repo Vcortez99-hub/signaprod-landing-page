@@ -94,6 +94,49 @@
             margin-bottom: 20px;
             text-align: center;
         }
+        .services {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(33% - 40px);
+        }
+        .service-item h3 {
+            color: #003d80;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #003d80;
+        }
         footer {
             background: linear-gradient(90deg, #003d80, #002952);
             color: white;
@@ -132,6 +175,36 @@
         <p>Somos uma nova consultoria que vem com o papel de ressignificar a atuação do seu time de produtos, trazendo inovação, originalidade, e entrega de valor além da percepção.</p>
     </section>
 
+    <section class="section" id="services">
+        <h2>Nossos Serviços</h2>
+        <div class="services">
+            <div class="service-item">
+                <h3>Reestruturação de Processos</h3>
+                <p>Melhore a eficiência do seu time com processos otimizados e orientados a resultados.</p>
+            </div>
+            <div class="service-item">
+                <h3>PO, PM e CPO as a Service</h3>
+                <p>Atuação estratégica liderando a entrega de valor e alinhamento com o negócio.</p>
+            </div>
+            <div class="service-item">
+                <h3>Squad as a Service</h3>
+                <p>Equipes de alto desempenho entregando soluções rápidas e eficientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contato</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nome" required>
+            <input type="text" placeholder="Empresa" required>
+            <input type="text" placeholder="Cargo" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Mensagem" rows="4"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
     <footer>
         <p>Conecte-se conosco no <a href="https://www.linkedin.com/company/signaprod/about/?viewAsMember=true" target="_blank">LinkedIn</a></p>
     </footer>
@@ -157,26 +230,6 @@
                         "color": "#000000"
                     }
                 },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
@@ -186,17 +239,7 @@
                 },
                 "move": {
                     "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
+                    "speed": 6
                 }
             },
             "retina_detect": true
