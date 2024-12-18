@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignaProd - Ressignificando Times de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb;
+            color: #333;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section h2 {
+            color: #0056b3;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .service-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1 1 calc(33% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .service-item h3 {
+            margin: 0 0 10px;
+            color: #0056b3;
+        }
+        .contact-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #003d80;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SignaProd</h1>
+        <p>Ressignificando Times de Produtos</p>
+    </header>
+
+    <section class="section">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma nova consultoria que vem com o papel de ressignificar a atuação do seu time de produtos, trazendo inovação, originalidade, e entrega de valor além da percepção.</p>
+    </section>
+
+    <section class="section">
+        <h2>Serviços</h2>
+        <div class="services">
+            <div class="service-item">
+                <h3>Reestruturação de Processos</h3>
+                <p>Aprimore a eficiência e produtividade do seu time com processos otimizados e orientados a resultados.</p>
+            </div>
+            <div class="service-item">
+                <h3>PO, PM e CPO as a Service</h3>
+                <p>Atuamos estrategicamente na sua companhia, liderando a entrega de valor e alinhamento com objetivos de negócios.</p>
+            </div>
+            <div class="service-item">
+                <h3>Squad as a Service</h3>
+                <p>Montamos equipes de alto desempenho para atender suas demandas de forma ágil e eficiente.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Contato</h2>
+        <form class="contact-form">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="company">Empresa</label>
+            <input type="text" id="company" name="company" required>
+
+            <label for="role">Cargo</label>
+            <input type="text" id="role" name="role" required>
+
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Conecte-se conosco no <a href="https://www.linkedin.com/company/signaprod/about/?viewAsMember=true" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
