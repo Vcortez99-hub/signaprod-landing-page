@@ -25,16 +25,27 @@
             z-index: -1;
         }
         header {
-            background: linear-gradient(90deg, #0056b3, #007bff);
+            background: linear-gradient(to bottom, rgba(0, 86, 179, 0.9), rgba(0, 123, 255, 0.7), transparent);
             color: white;
-            padding: 40px 20px;
+            padding: 80px 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: 50% 50% 0 0;
         }
         header h1 {
             margin: 0;
             font-size: 3rem;
             font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         header p {
             margin: 10px 0 0;
@@ -83,74 +94,6 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-        .service-item {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            flex: 1 1 calc(30% - 20px);
-            max-width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-        .service-item h3 {
-            margin: 0 0 10px;
-            color: #003d80;
-            font-size: 1.5rem;
-        }
-        .service-item p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .contact-form {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 30px;
-            max-width: 600px;
-            margin: auto;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .contact-form label {
-            display: block;
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #333;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-top: 5px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        .contact-form button {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            margin-top: 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .contact-form button:hover {
-            background-color: #003d80;
-            transform: scale(1.05);
-        }
         footer {
             background: linear-gradient(90deg, #003d80, #002952);
             color: white;
@@ -187,46 +130,6 @@
     <section class="section" id="about">
         <h2>Sobre Nós</h2>
         <p>Somos uma nova consultoria que vem com o papel de ressignificar a atuação do seu time de produtos, trazendo inovação, originalidade, e entrega de valor além da percepção.</p>
-    </section>
-
-    <section class="section" id="services">
-        <h2>Serviços</h2>
-        <div class="services">
-            <div class="service-item">
-                <h3>Reestruturação de Processos</h3>
-                <p>Aprimore a eficiência e produtividade do seu time com processos otimizados e orientados a resultados.</p>
-            </div>
-            <div class="service-item">
-                <h3>PO, PM e CPO as a Service</h3>
-                <p>Atuamos estrategicamente na sua companhia, liderando a entrega de valor e alinhamento com objetivos de negócios.</p>
-            </div>
-            <div class="service-item">
-                <h3>Squad as a Service</h3>
-                <p>Montamos equipes de alto desempenho para atender suas demandas de forma ágil e eficiente.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="contact">
-        <h2>Contato</h2>
-        <form class="contact-form">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="company">Empresa</label>
-            <input type="text" id="company" name="company" required>
-
-            <label for="role">Cargo</label>
-            <input type="text" id="role" name="role" required>
-
-            <label for="phone">Telefone</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
-
-            <button type="submit">Enviar</button>
-        </form>
     </section>
 
     <footer>
