@@ -1,203 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignaProd - Ressignificando Times de Produtos</title>
+    <title>SignaProd</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #000428, #004e92);
-            color: #333;
-            position: relative;
-            overflow-x: hidden;
+            background-color: #ffffff; /* Fundo branco */
+            color: #000000; /* Texto preto */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
         }
-        header {
-            background: linear-gradient(to bottom, rgba(0, 86, 179, 0.9), rgba(0, 123, 255, 0.7));
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            position: relative;
-        }
-        header::after {
-            content: '';
+
+        /* Fundo animado com partículas */
+        #particles-js {
             position: absolute;
-            bottom: -50px;
-            left: 0;
             width: 100%;
-            height: 100px;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
-            border-radius: 50% 50% 0 0;
+            height: 100%;
+            background: #ffffff; /* Fundo branco */
+            z-index: -1;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        /* Estilo do cabeçalho */
+        header {
+            position: relative;
+            padding: 20px;
+            border-bottom: 2px solid #000000; /* Borda preta */
         }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-        }
+
         nav {
-            background: white;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        nav ul {
+
+        .logo a {
+            color: #000000; /* Logo preta */
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
             list-style: none;
             display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #0056b3;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #003d80;
-        }
-        .section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        .section h2 {
-            color: #0056b3;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .services {
-            display: flex;
             gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
-        .service-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: calc(33% - 40px);
-        }
-        .service-item h3 {
-            color: #003d80;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .contact-form button {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #003d80;
-        }
-        footer {
-            background: linear-gradient(90deg, #003d80, #002952);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-        }
-        footer a {
-            color: #ffcc00;
+
+        .nav-links a {
+            color: #000000; /* Links pretos */
             text-decoration: none;
-            font-weight: bold;
+            font-size: 18px;
         }
-        footer a:hover {
-            text-decoration: underline;
+
+        /* Estilo da seção hero */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #000000; /* Título preto */
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #000000; /* Parágrafo preto */
+        }
+
+        .cta {
+            background-color: #0000ff; /* Botão azul */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #000000; /* Borda preta */
+            margin-top: 50px;
+            color: #000000; /* Texto preto */
         }
     </style>
 </head>
 <body>
+    <!-- Fundo animado com partículas -->
+    <div id="particles-js"></div>
+
+    <!-- Conteúdo da página -->
     <header>
-        <h1>SignaProd</h1>
-        <p>Ressignificando Times de Produtos</p>
+        <nav>
+            <div class="logo">
+                <a href="#">SignaProd</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">Sobre Nós</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-    </nav>
-
-    <section class="section" id="about">
-        <h2>Sobre Nós</h2>
-        <p>Somos uma nova consultoria que vem com o papel de ressignificar a atuação do seu time de produtos, trazendo inovação, originalidade, e entrega de valor além da percepção.</p>
-    </section>
-
-    <section class="section" id="services">
-        <h2>Nossos Serviços</h2>
-        <div class="services">
-            <div class="service-item">
-                <h3>Reestruturação de Processos</h3>
-                <p>Melhore a eficiência do seu time com processos otimizados e orientados a resultados.</p>
-            </div>
-            <div class="service-item">
-                <h3>PO, PM e CPO as a Service</h3>
-                <p>Atuação estratégica liderando a entrega de valor e alinhamento com o negócio.</p>
-            </div>
-            <div class="service-item">
-                <h3>Squad as a Service</h3>
-                <p>Equipes de alto desempenho entregando soluções rápidas e eficientes.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="contact">
-        <h2>Contato</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Nome" required>
-            <input type="text" placeholder="Empresa" required>
-            <input type="text" placeholder="Cargo" required>
-            <input type="email" placeholder="E-mail" required>
-            <textarea placeholder="Mensagem" rows="4"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+    <section class="hero">
+        <h1>Bem-vindo à SignaProd</h1>
+        <p>Soluções inovadoras para o seu negócio.</p>
+        <a href="#" class="cta">Saiba Mais</a>
     </section>
 
     <footer>
-        <p>Conecte-se conosco no <a href="https://www.linkedin.com/company/signaprod/about/?viewAsMember=true" target="_blank">LinkedIn</a></p>
+        <p>&copy; 2023 SignaProd. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Biblioteca de partículas -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Configuração do fundo animado
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#000000" /* Partículas pretas */
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#000000", /* Linhas pretas */
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
