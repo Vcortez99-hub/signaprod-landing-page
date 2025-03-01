@@ -10,6 +10,18 @@ body {
     color: #333;
     background-color: #f9f9f9;
     line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ajustado para ficar atrás do conteúdo */
+    background-color: transparent; /* Para não sobrepor o gradiente do hero */
 }
 
 /* Header */
@@ -19,10 +31,16 @@ header {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
+    padding: 15px 20px;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .logo a {
@@ -30,18 +48,45 @@ header {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #007bff;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Seção Hero */
@@ -52,112 +97,236 @@ header {
     align-items: center;
     text-align: center;
     color: #fff;
+    position: relative;
+    z-index: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background-tech.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Efeito parallax */
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
+    z-index: 2; /* Garante que fique acima das partículas */
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cta {
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
 }
 
 .cta:hover {
-    background-color: #0056b3;
+    background-color: transparent;
+    border-color: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Seção Soluções */
 .solutions {
-    padding: 50px 20px;
+    padding: 100px 20px;
     text-align: center;
+    position: relative;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.solutions h2, .about h2, .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.solutions h2::after, .about h2::after, .contact h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #007bff;
+    bottom: -15px;
+    left: 25%;
 }
 
 .solution-grid {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .solution-item {
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s ease;
+    max-width: 350px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
 .solution-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #007bff;
+}
+
+.solution-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #007bff;
 }
 
 /* Seção Sobre Nós */
 .about {
-    padding: 50px 20px;
+    padding: 100px 20px;
     text-align: center;
+    background-color: #f5f9ff;
+    position: relative;
+    z-index: 5;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Seção Contato */
 .contact {
-    padding: 50px 20px;
+    padding: 100px 20px;
     text-align: center;
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
 }
 
 .contact form {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 0 20px;
 }
 
 .contact input,
-.contact textarea,
-.contact button {
-    padding: 10px;
-    border: 1px solid #ccc;
+.contact textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 .contact button {
     background-color: #007bff;
     color: #fff;
+    padding: 15px;
     border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .contact button:hover {
     background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     background: #333;
     color: #fff;
+    position: relative;
+    z-index: 5;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculta o menu em telas menores - ideal seria implementar um menu hambúrguer */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .solutions h2, .about h2, .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .solution-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .solution-item {
+        max-width: 100%;
+    }
+    
+    .about, .solutions, .contact {
+        padding: 60px 20px;
+    }
+}
+
+/* Pequena animação para carregar os elementos de forma suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content, .solution-item, .about p, .contact form {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.solution-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.solution-item:nth-child(3) {
+    animation-delay: 0.4s;
 }
