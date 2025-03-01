@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGNAPROD - Consultoria em TI</title>
+    <title>SIGNAPROD - Ressignificando a Tecnologia para o seu Negócio</title>
     <!-- Adicionado fallback para garantir que a página tenha estilos mesmo se o CSS não carregar -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            color: #333;
         }
         #particles-js {
             position: fixed;
@@ -23,8 +24,11 @@
         }
         header {
             padding: 1rem 2rem;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav {
             display: flex;
@@ -43,6 +47,10 @@
         a {
             text-decoration: none;
             color: #333;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #0066cc;
         }
         .logo a {
             font-weight: bold;
@@ -51,82 +59,250 @@
         }
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            color: #0066cc;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #444;
         }
         .cta {
             display: inline-block;
             background-color: #0066cc;
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             margin-top: 1rem;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
         }
         .cta:hover {
             background-color: #0055aa;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
         }
         section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             margin: 0 auto;
             max-width: 1200px;
         }
         h2 {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #0066cc;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #0066cc;
+            margin: 1rem auto;
+            border-radius: 2px;
         }
         .solution-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
         }
         .solution-item {
             background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .solution-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        .solution-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #0066cc;
+        }
+        .solution-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: #0066cc;
+        }
+        .solution-item p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .solution-benefits {
+            margin-top: 1.5rem;
+        }
+        .solution-benefits li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .solution-benefits li::before {
+            content: '✓';
+            color: #0066cc;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .about {
+            background-color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .numbers {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        .number-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .number-item .count {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+        .number-item p {
+            font-size: 1.1rem;
+            margin: 0;
         }
         form {
             display: flex;
             flex-direction: column;
             max-width: 600px;
             margin: 0 auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
         input, textarea {
-            margin-bottom: 1rem;
-            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #0066cc;
+            outline: none;
         }
         button {
             background-color: #0066cc;
             color: white;
-            padding: 0.8rem;
+            padding: 1rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
         }
         button:hover {
             background-color: #0055aa;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
         }
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             background-color: rgba(0, 0, 0, 0.05);
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin: 1rem 0;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-right: 1.5rem;
+        }
+        .social-links {
+            margin: 1rem 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
         }
         
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            .numbers {
+                flex-direction: column;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
     <!-- Mantido o link para o CSS externo -->
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Fundo animado com partículas -->
@@ -140,6 +316,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#solutions">Soluções</a></li>
+                <li><a href="#benefits">Benefícios</a></li>
                 <li><a href="#about">Sobre Nós</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
@@ -148,49 +325,142 @@
     
     <section class="hero">
         <div class="hero-content">
-            <h1>SIGNAPROD</h1>
-            <p>Consultoria em Tecnologia para Transformar Sua Empresa</p>
-            <a href="#solutions" class="cta">Conheça Nossas Soluções</a>
+            <h1>Transforme Seu Negócio com Tecnologia Inteligente</h1>
+            <p>A SIGNAPROD ressignifica a entrega de tecnologia para criar soluções que impulsionam resultados reais para o seu negócio.</p>
+            <a href="#solutions" class="cta">Descubra Nossas Soluções</a>
         </div>
     </section>
     
     <!-- Seção de Soluções -->
     <section id="solutions" class="solutions">
-        <h2>Nossas Soluções</h2>
+        <h2>Soluções que Transformam</h2>
         <div class="solution-grid">
             <div class="solution-item">
-                <h3>ITSM</h3>
-                <p>Implementação de IT Service Management para otimizar processos de TI.</p>
+                <h3>Implementação de ITSM</h3>
+                <p>Otimize seus processos de TI com softwares de gerenciamento de serviços que elevam a eficiência operacional.</p>
+                <ul class="solution-benefits">
+                    <li>Automação de processos críticos</li>
+                    <li>Aumento da produtividade da equipe</li>
+                    <li>Redução de custos operacionais</li>
+                    <li>Experiência superior para usuários finais</li>
+                </ul>
+            </div>
+            <div class="solution-item">
+                <h3>Alocação de Recursos</h3>
+                <p>Equipes especializadas e sob medida para impulsionar seus projetos de tecnologia com agilidade e expertise.</p>
+                <ul class="solution-benefits">
+                    <li>Profissionais com certificações de mercado</li>
+                    <li>Flexibilidade para projetos de qualquer escala</li>
+                    <li>Redução do tempo de implementação</li>
+                    <li>Transferência de conhecimento para sua equipe</li>
+                </ul>
             </div>
             <div class="solution-item">
                 <h3>Transformação Digital</h3>
-                <p>Acelere sua jornada digital com estratégias personalizadas.</p>
+                <p>Estratégias personalizadas que aceleram sua jornada digital e criam vantagens competitivas sustentáveis.</p>
+                <ul class="solution-benefits">
+                    <li>Diagnóstico de maturidade digital</li>
+                    <li>Roadmap de transformação estratégica</li>
+                    <li>Otimização de processos de negócio</li>
+                    <li>Acompanhamento de KPIs de transformação</li>
+                </ul>
             </div>
             <div class="solution-item">
-                <h3>Body Shop</h3>
-                <p>Alocação de recursos especializados para projetos de curto e longo prazo.</p>
+                <h3>Modernização Cloud</h3>
+                <p>Migração e modernização para ambientes cloud que proporcionam escalabilidade, segurança e redução de custos.</p>
+                <ul class="solution-benefits">
+                    <li>Avaliação de infraestrutura atual</li>
+                    <li>Migração segura e sem interrupções</li>
+                    <li>Otimização de recursos e custos</li>
+                    <li>Arquitetura cloud moderna e resiliente</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Benefícios -->
+    <section id="benefits" class="benefits">
+        <h2>Por Que Escolher a SIGNAPROD</h2>
+        <div class="solution-grid">
+            <div class="solution-item">
+                <h3>Expertise Comprovada</h3>
+                <p>Nossa equipe conta com especialistas certificados nas mais relevantes tecnologias do mercado, garantindo entregas de excelência.</p>
+            </div>
+            <div class="solution-item">
+                <h3>Abordagem Personalizada</h3>
+                <p>Compreendemos profundamente o seu negócio para criar soluções que atendam às suas necessidades específicas e gerem valor real.</p>
+            </div>
+            <div class="solution-item">
+                <h3>Resultados Mensuráveis</h3>
+                <p>Trabalhamos com métricas claras e KPIs alinhados aos seus objetivos de negócio, garantindo retorno sobre o investimento.</p>
             </div>
         </div>
     </section>
     
     <!-- Seção Sobre Nós -->
     <section id="about" class="about">
-        <h2>Sobre Nós</h2>
-        <p>A SIGNAPROD é uma consultoria especializada em soluções de TI que ajudam empresas a alcançar seus objetivos estratégicos.</p>
+        <h2>Sobre a SIGNAPROD</h2>
+        <p>A SIGNAPROD é uma consultoria especializada em transformação tecnológica que ajuda empresas a ressignificar sua relação com a tecnologia. Combinamos expertise técnica com visão estratégica de negócios para entregar soluções que geram resultados tangíveis.</p>
+        <p>Nossa missão é transformar desafios tecnológicos em oportunidades de crescimento, potencializando a competitividade dos nossos clientes através de soluções inovadoras e sustentáveis.</p>
+        
+        <div class="numbers">
+            <div class="number-item">
+                <div class="count">150+</div>
+                <p>Projetos Entregues</p>
+            </div>
+            <div class="number-item">
+                <div class="count">98%</div>
+                <p>Clientes Satisfeitos</p>
+            </div>
+            <div class="number-item">
+                <div class="count">30+</div>
+                <p>Especialistas</p>
+            </div>
+        </div>
     </section>
     
     <!-- Seção Contato -->
     <section id="contact" class="contact">
-        <h2>Fale Conosco</h2>
+        <h2>Transforme Seu Negócio Hoje</h2>
         <form action="https://formspree.io/f/xeoeygjy" method="POST">
             <input type="text" name="name" placeholder="Seu Nome" required>
             <input type="email" name="email" placeholder="Seu E-mail" required>
-            <textarea rows="5" name="message" placeholder="Sua Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="tel" name="phone" placeholder="Seu Telefone">
+            <select name="service" required>
+                <option value="" disabled selected>Selecione um Serviço</option>
+                <option value="itsm">Implementação de ITSM</option>
+                <option value="resources">Alocação de Recursos</option>
+                <option value="digital">Transformação Digital</option>
+                <option value="cloud">Modernização Cloud</option>
+                <option value="other">Outro</option>
+            </select>
+            <textarea rows="5" name="message" placeholder="Conte-nos sobre seu desafio de negócio" required></textarea>
+            <button type="submit">Solicitar Contato <i class="fas fa-arrow-right"></i></button>
         </form>
     </section>
     
     <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">
+                    <a href="#">SIGNAPROD</a>
+                </div>
+                <p>Ressignificando a tecnologia para o seu negócio</p>
+            </div>
+            
+            <ul class="footer-links">
+                <li><a href="#solutions">Soluções</a></li>
+                <li><a href="#benefits">Benefícios</a></li>
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
         <p>&copy; 2023 SIGNAPROD. Todos os direitos reservados.</p>
     </footer>
     
