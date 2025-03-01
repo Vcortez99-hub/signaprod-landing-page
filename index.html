@@ -166,38 +166,6 @@
             left: 0;
             font-weight: bold;
         }
-        .about {
-            background-color: white;
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .about p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-        .numbers {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-        .number-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        .number-item .count {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-        .number-item p {
-            font-size: 1.1rem;
-            margin: 0;
-        }
         form {
             display: flex;
             flex-direction: column;
@@ -208,7 +176,7 @@
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
-        input, textarea {
+        input, textarea, select {
             margin-bottom: 1.5rem;
             padding: 1rem;
             border: 1px solid #ddd;
@@ -217,7 +185,7 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             border-color: #0066cc;
             outline: none;
         }
@@ -283,9 +251,6 @@
             .solution-grid {
                 grid-template-columns: 1fr;
             }
-            .numbers {
-                flex-direction: column;
-            }
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -317,7 +282,6 @@
             <ul class="nav-links">
                 <li><a href="#solutions">Soluções</a></li>
                 <li><a href="#benefits">Benefícios</a></li>
-                <li><a href="#about">Sobre Nós</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
@@ -397,28 +361,6 @@
         </div>
     </section>
     
-    <!-- Seção Sobre Nós -->
-    <section id="about" class="about">
-        <h2>Sobre a SIGNAPROD</h2>
-        <p>A SIGNAPROD é uma consultoria especializada em transformação tecnológica que ajuda empresas a ressignificar sua relação com a tecnologia. Combinamos expertise técnica com visão estratégica de negócios para entregar soluções que geram resultados tangíveis.</p>
-        <p>Nossa missão é transformar desafios tecnológicos em oportunidades de crescimento, potencializando a competitividade dos nossos clientes através de soluções inovadoras e sustentáveis.</p>
-        
-        <div class="numbers">
-            <div class="number-item">
-                <div class="count">150+</div>
-                <p>Projetos Entregues</p>
-            </div>
-            <div class="number-item">
-                <div class="count">98%</div>
-                <p>Clientes Satisfeitos</p>
-            </div>
-            <div class="number-item">
-                <div class="count">30+</div>
-                <p>Especialistas</p>
-            </div>
-        </div>
-    </section>
-    
     <!-- Seção Contato -->
     <section id="contact" class="contact">
         <h2>Transforme Seu Negócio Hoje</h2>
@@ -451,7 +393,6 @@
             <ul class="footer-links">
                 <li><a href="#solutions">Soluções</a></li>
                 <li><a href="#benefits">Benefícios</a></li>
-                <li><a href="#about">Sobre Nós</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
             
