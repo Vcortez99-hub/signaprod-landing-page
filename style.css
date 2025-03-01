@@ -8,9 +8,10 @@
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f9f9f9;
     line-height: 1.6;
     overflow-x: hidden; /* Evita scroll horizontal */
+    background-color: #2a2a2a; /* Fundo cinza escuro para toda a página */
+    position: relative;
 }
 
 /* Partículas */
@@ -20,8 +21,8 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0; /* Ajustado para ficar atrás do conteúdo */
-    background-color: transparent; /* Para não sobrepor o gradiente do hero */
+    z-index: 0; /* Fica atrás do conteúdo */
+    background-color: #2a2a2a; /* Mesma cor de fundo do body */
 }
 
 /* Header */
@@ -29,9 +30,10 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7); /* Levemente transparente para mostrar partículas */
     z-index: 1000;
     padding: 15px 20px;
+    backdrop-filter: blur(5px); /* Efeito de blur para melhorar legibilidade */
 }
 
 nav {
@@ -99,17 +101,18 @@ nav {
     color: #fff;
     position: relative;
     z-index: 1;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background-tech.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efeito parallax */
+    /* Removido o background-image para mostrar as partículas */
+    background: rgba(0, 0, 0, 0.5); /* Escurecimento sutil para melhorar contraste */
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    z-index: 2; /* Garante que fique acima das partículas */
+    padding: 30px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3); /* Fundo levemente escuro para destacar o texto */
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Efeito de blur para melhorar legibilidade */
 }
 
 .hero h1 {
@@ -151,7 +154,9 @@ nav {
     text-align: center;
     position: relative;
     z-index: 5;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Semitransparente para ver as partículas */
+    backdrop-filter: blur(10px); /* Efeito de blur */
+    color: #333;
 }
 
 .solutions h2, .about h2, .contact h2 {
@@ -181,10 +186,10 @@ nav {
 }
 
 .solution-item {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 350px;
     transition: all 0.3s ease;
@@ -193,8 +198,9 @@ nav {
 
 .solution-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     border-bottom: 3px solid #007bff;
+    background: rgba(255, 255, 255, 1);
 }
 
 .solution-item h3 {
@@ -207,9 +213,10 @@ nav {
 .about {
     padding: 100px 20px;
     text-align: center;
-    background-color: #f5f9ff;
+    background-color: rgba(40, 40, 40, 0.8); /* Cinza escuro */
     position: relative;
     z-index: 5;
+    color: #fff;
 }
 
 .about p {
@@ -223,9 +230,11 @@ nav {
 .contact {
     padding: 100px 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     position: relative;
     z-index: 5;
+    backdrop-filter: blur(10px);
+    color: #333;
 }
 
 .contact form {
@@ -234,7 +243,10 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .contact input,
@@ -244,6 +256,7 @@ nav {
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .contact input:focus,
@@ -251,6 +264,7 @@ nav {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    background: #fff;
 }
 
 .contact button {
@@ -275,16 +289,17 @@ nav {
 footer {
     text-align: center;
     padding: 30px;
-    background: #333;
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
     position: relative;
     z-index: 5;
+    backdrop-filter: blur(5px);
 }
 
 /* Media Queries para Responsividade */
 @media screen and (max-width: 768px) {
     .nav-links {
-        display: none; /* Oculta o menu em telas menores - ideal seria implementar um menu hambúrguer */
+        display: none; /* Oculta o menu em telas menores */
     }
     
     .hero h1 {
