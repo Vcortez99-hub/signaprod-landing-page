@@ -16,7 +16,7 @@
             background-color: #ffffff; /* Fundo branco */
             color: #000000; /* Texto preto */
             font-family: Arial, sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         /* Fundo animado com partículas */
@@ -94,25 +94,45 @@
             text-align: center;
         }
 
+        .solutions h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #000000;
+        }
+
+        .solution-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
         .solution-item {
-            display: inline-block;
-            width: 23%;
-            margin: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
             padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            vertical-align: top;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .solution-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
         .solution-item h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0000ff;
         }
 
         .solution-item p {
             font-size: 16px;
             color: #555;
+            line-height: 1.5;
         }
 
         /* Estilo do rodapé */
@@ -154,21 +174,19 @@
     <!-- Seção de Soluções -->
     <section id="solutions" class="solutions">
         <h2>Nossas Soluções</h2>
-        <div class="solution-item">
-            <h3>Solução 1</h3>
-            <p>Descrição breve da solução 1.</p>
-        </div>
-        <div class="solution-item">
-            <h3>Solução 2</h3>
-            <p>Descrição breve da solução 2.</p>
-        </div>
-        <div class="solution-item">
-            <h3>Solução 3</h3>
-            <p>Descrição breve da solução 3.</p>
-        </div>
-        <div class="solution-item">
-            <h3>Solução 4</h3>
-            <p>Descrição breve da solução 4.</p>
+        <div class="solution-grid">
+            <div class="solution-item">
+                <h3>Produto A: ITSM</h3>
+                <p>Implementação de IT Service Management para otimizar processos de TI e garantir excelência operacional.</p>
+            </div>
+            <div class="solution-item">
+                <h3>Produto B: Transformação Digital</h3>
+                <p>Acelere sua jornada digital com estratégias personalizadas para inovar e crescer no mercado.</p>
+            </div>
+            <div class="solution-item">
+                <h3>Produto C: Body Shop</h3>
+                <p>Alocação de recursos especializados para projetos de curto e longo prazo, maximizando resultados.</p>
+            </div>
         </div>
     </section>
 
@@ -184,107 +202,4 @@
             particles: {
                 number: {
                     value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#000000" /* Partículas pretas */
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: false,
-                    anim: {
-                        enable: false,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#000000", /* Linhas pretas */
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 400,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
-</body>
-</html>
+                    density
