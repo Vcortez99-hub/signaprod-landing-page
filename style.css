@@ -7,10 +7,10 @@
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    color: #333;
+    color: #ffffff; /* Alterado para branco */
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: #f0f2f5; /* Fundo claro para combinar com o HTML */
+    background-color: #121212; /* Alterado para um tom escuro */
     position: relative;
 }
 
@@ -22,7 +22,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0; /* Fica atrás do conteúdo */
-    background-color: #f0f2f5; /* Mesmo tom do body */
+    background-color: #121212; /* Alterado para um tom escuro */
 }
 
 /* Header */
@@ -64,7 +64,7 @@ nav {
 }
 
 .nav-links a {
-    color: #333;
+    color: #ffffff; /* Alterado para branco */
     text-decoration: none;
     font-size: 16px;
     position: relative;
@@ -98,7 +98,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #333;
+    color: #ffffff; /* Alterado para branco */
     position: relative;
     z-index: 1;
     padding: 5rem 2rem;
@@ -111,7 +111,7 @@ nav {
     margin: 0 auto;
     padding: 2.5rem 2rem;
     z-index: 2;
-    background: white;
+    background: #1e1e1e; /* Alterado para um tom escuro */
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -143,7 +143,7 @@ nav {
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: #555;
+    color: #ffffff; /* Alterado para branco */
 }
 
 .cta {
@@ -200,7 +200,7 @@ nav {
 }
 
 .solution-item {
-    background: white;
+    background: #1e1e1e; /* Alterado para um tom escuro */
     padding: 2.5rem 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -231,7 +231,7 @@ nav {
 }
 
 .solution-item p {
-    color: #555;
+    color: #ffffff; /* Alterado para branco */
     margin-bottom: 1.5rem;
 }
 
@@ -260,7 +260,7 @@ nav {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #1e1e1e; /* Alterado para um tom escuro */
     padding: 3rem;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -309,7 +309,7 @@ footer {
     text-align: center;
     padding: 3rem 2rem;
     background-color: rgba(0, 0, 0, 0.05);
-    color: #333;
+    color: #ffffff; /* Alterado para branco */
     position: relative;
     z-index: 5;
     margin-top: 4rem;
@@ -343,7 +343,7 @@ footer {
     display: inline-block;
     margin: 0 0.5rem;
     font-size: 1.5rem;
-    color: #333;
+    color: #ffffff; /* Alterado para branco */
 }
 
 .social-links a:hover {
